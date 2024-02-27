@@ -117,7 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/cmb_Reg/static/'
 STATICFILES_DIRS = [
-    BASE_DIR /'cmb_Reg/static/cmb_Reg/',
+    BASE_DIR / 'cmb_Reg/static/',
 ]
 
 # Default primary key field type

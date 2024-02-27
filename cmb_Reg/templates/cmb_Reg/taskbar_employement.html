@@ -88,31 +88,31 @@
               <span class="menu-header-text" data-i18n="Taskbar">Taskbar</span>
             </li>
             <li class="menu-item">
-              <a href="app-email.html" class="menu-link">
+              <a href="{% url 'profile' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user-check"></i>
                 <div data-i18n="Profile">Profile</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-chat.html" class="menu-link">
+              <a href="{% url 'education' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-certificate"></i>
                 <div data-i18n="Qualifications">Qualifications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-calendar.html" class="menu-link">
+              <a href="{% url 'employement' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-briefcase"></i>
                 <div data-i18n="Employement">Employement</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'publications' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-book"></i>
                 <div data-i18n="publications">publications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'referees' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Reference">Reference</div>
               </a>
@@ -343,22 +343,21 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Educational Qualifications</h4>
+              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Employement</h4>
               <div class="row">
-
                 <!-- User Content -->
                 <div class="col-xl-12 col-lg-7 col-md-7 order-0 order-md-1">                                  
 
-                  <!-- Billing Address -->
+                  <!-- current employement -->
                   <div class="card card-action mb-4">
                     <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Advanced Level Examination Results</h5>
+                      <h5 class="card-action-title mb-0">Current Employement</h5>
                       <div class="card-action-element">
                         <button
                           class="btn btn-primary btn-sm edit-address"
                           type="button"
                           data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
+                          data-bs-target="#editcurrentemployement">
                           Edit Details
                         </button>
                       </div>
@@ -367,56 +366,56 @@
                       <div class="row">
                         <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Attempted Year:</dt>
-                            <dd class="col-sm-8">2022</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Company Name:</dt>
+                            <dd class="col-sm-8">University of colombo</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Stream:</dt>
-                            <dd class="col-sm-8">Physical Science</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Duties:</dt>
+                            <dd class="col-sm-8">Quality control</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Result Sheet:</dt>
-                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">View PDF</a></dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Email:</dt>
+                            <dd class="col-sm-8">user@test.com</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
+                            <dd class="col-sm-8">
+                              100 Water Plant <br />Avenue, Building 1303<br />
+                              Wake Island
+                            </dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
                           <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-bold text-nowrap">Subject</dt>
-                            <dd class="col-sm-8 fw-bold text-nowrap">Result</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
+                            <dd class="col-sm-8">system analyst</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 1</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
+                            <dd class="col-sm-8">071 111 1111</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 2</dt>
-                            <dd class="col-sm-8">A</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 3</dt>
-                            <dd class="col-sm-8">A</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 4</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Fax:</dt>
+                            <dd class="col-sm-8">011 111 1111</dd>
 
                           </dl>
-                        </div>                        
-                      </div>                      
-                    </div>                    
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <!--/ Billing Address -->
+                  <!--/ current employement -->
                   <button
                           class="btn btn-primary btn-sm edit-address mb-4"
                           type="button"
                           data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
-                          Add New Qualification
+                          data-bs-target="#addprevemployement">
+                          Add Previous Employement
                   </button>
-                  <!-- Billing Address -->
+                  <!-- previous employement -->
                   <div class="card card-action mb-4">
                     <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Other Educational Qualifications</h5>
+                      <h5 class="card-action-title mb-0">Previous Employement</h5>
                       <div class="card-action-element">
                         <button
                           class="btn btn-primary btn-sm edit-address"
                           type="button"
                           data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
+                          data-bs-target="#editprevemployement">
                           Edit Details
                         </button>
                       </div>
@@ -425,41 +424,211 @@
                       <div class="row">
                         <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
-                            
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Degree Name:</dt>
-                            <dd class="col-sm-8">BSc.Physical Science</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Company Name:</dt>
+                            <dd class="col-sm-8">University of colombo</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Started Year:</dt>
-                            <dd class="col-sm-8">2018</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Duties:</dt>
+                            <dd class="col-sm-8">Quality control</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Graduated Year:</dt>
-                            <dd class="col-sm-8">2022</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Transcript:</dt>
-                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">View PDF</a></dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
+                            <dd class="col-sm-8">
+                              100 Water Plant <br />Avenue, Building 1303<br />
+                              Wake Island
+                            </dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
                           <dl class="row mb-0">
-                            
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Institute:</dt>
-                            <dd class="col-sm-8">University of Colombo</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
+                            <dd class="col-sm-8">system analyst</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Class:</dt>
-                            <dd class="col-sm-8">General</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Start Date:</dt>
+                            <dd class="col-sm-8">2019-10-09</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">GPA:</dt>
-                            <dd class="col-sm-8">2.9</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">End Date:</dt>
+                            <dd class="col-sm-8">2022-05-05</dd>
 
                           </dl>
-                        </div>                        
-                      </div>                      
-                    </div>                    
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <!--/ Billing Address -->
+                  <!--/ previous employement -->
                 </div>
                 <!--/ User Content -->
-              </div>              
+              </div>   
+              
+              <!-- add current employement Modal -->
+              <div class="modal fade" id="editcurrentemployement" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="editcurrentemployementForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Edit Current Employement Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="current-employement">Current Employment</label>
+                          <input type="text" id="current-employement" class="form-control" placeholder="University of Colombo" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="designation">Designation</label>
+                          <input type="text" id="designation" class="form-control" placeholder="System Analyst" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="duties">Nature of Duties Performed</label>
+                          <input type="text" id="duties" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-phone">Phone</label>
+                          <input type="text" id="office-phone" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-fax">Fax</label>
+                          <input type="text" id="office-fax" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-email">Email</label>
+                          <input type="text" id="office-email" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-address">Office Address</label>
+                          <input type="text" id="office-address" class="form-control" placeholder="colombo 3" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ edit current employement Modal -->
+              <!-- add prev employement Modal -->
+              <div class="modal fade" id="addprevemployement" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="addprevemployementForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Add Previous Employement Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-employement">Previous Employment</label>
+                          <input type="text" id="current-employement" class="form-control" placeholder="University of Colombo" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-designation">Designation</label>
+                          <input type="text" id="designation" class="form-control" placeholder="System Analyst" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-duties">Nature of Duties Performed</label>
+                          <input type="text" id="duties" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-StartDate">Start Date</label>
+                          <input type="date" id="office-phone" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev_EndDate">End Date</label>
+                          <input type="date" id="office-fax" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-office-email">Email</label>
+                          <input type="text" id="office-email" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-office-address">Office Address</label>
+                          <input type="text" id="office-address" class="form-control" placeholder="colombo 3" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ add prev employement Modal -->
+              <!-- edit prev employement Modal -->
+              <div class="modal fade" id="editprevemployement" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="editprevemployementForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Edit Previous Employement Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-employement">Previous Employment</label>
+                          <input type="text" id="current-employement" class="form-control" placeholder="University of Colombo" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-designation">Designation</label>
+                          <input type="text" id="designation" class="form-control" placeholder="System Analyst" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-duties">Nature of Duties Performed</label>
+                          <input type="text" id="duties" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-StartDate">Start Date</label>
+                          <input type="date" id="office-phone" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev_EndDate">End Date</label>
+                          <input type="date" id="office-fax" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-office-email">Email</label>
+                          <input type="text" id="office-email" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="prev-office-address">Office Address</label>
+                          <input type="text" id="office-address" class="form-control" placeholder="colombo 3" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ edit prev employement Modal -->
 
               
             </div>
@@ -530,6 +699,5 @@
     <script src="{% static 'cmb_Reg/js/modal-add-new-address.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/app-user-view.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/app-user-view-billing.js' %}"></script>
-    
   </body>
 </html>

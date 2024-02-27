@@ -22,11 +22,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app-user-view-billing - 2/', TemplateView.as_view(template_name='cmb_Reg/app-user-view-billing - cmb - 2.html'), name='app-user-view-billing - 2'),
-    path('app-user-view-billing/', TemplateView.as_view(template_name='cmb_Reg/app-user-view-billing - cmb.html'), name='app-user-view-billing'),
-    path('app-user-view-billing - 3/', TemplateView.as_view(template_name='cmb_Reg/app-user-view-billing - cmb - 3.html'), name='app-user-view-billing - 3'),
-    path('app-user-view-billing - 4/', TemplateView.as_view(template_name='cmb_Reg/app-user-view-billing - cmb - 4.html'), name='app-user-view-billing - 4'),
-    path('app-user-view-billing - 5/', TemplateView.as_view(template_name='cmb_Reg/app-user-view-billing - cmb - 5.html'), name='app-user-view-billing - 5'),
+    path('education/', TemplateView.as_view(template_name='cmb_Reg/taskbar_education.html'), name='education'),
+    path('profile/', TemplateView.as_view(template_name='cmb_Reg/taskbar_profile.html'), name='profile'),
+    path('employement/', TemplateView.as_view(template_name='cmb_Reg/taskbar_employement.html'), name='employement'),
+    path('publications/', TemplateView.as_view(template_name='cmb_Reg/taskbar_publications.html'), name='publications'),
+    path('referees/', TemplateView.as_view(template_name='cmb_Reg/taskbar_referees.html'), name='referees'),
     path('auth-forgot-password-basic-cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-forgot-password-basic-cmb.html'), name='auth-forgot-password-basic-cmb'),
     path('auth-login-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-login-basic - cmb.html'), name='auth-login-basic - cmb'),
     path('auth-register-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-register-basic - cmb.html'), name='auth-register-basic - cmb'),

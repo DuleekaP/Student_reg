@@ -88,31 +88,31 @@
               <span class="menu-header-text" data-i18n="Taskbar">Taskbar</span>
             </li>
             <li class="menu-item">
-              <a href="app-email.html" class="menu-link">
+              <a href="{% url 'profile' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user-check"></i>
                 <div data-i18n="Profile">Profile</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-chat.html" class="menu-link">
+              <a href="{% url 'education' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-certificate"></i>
                 <div data-i18n="Qualifications">Qualifications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-calendar.html" class="menu-link">
+              <a href="{% url 'employement' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-briefcase"></i>
                 <div data-i18n="Employement">Employement</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'publications' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-book"></i>
                 <div data-i18n="publications">publications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'referees' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Reference">Reference</div>
               </a>
@@ -343,7 +343,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Publications</h4>
+              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Reference</h4>
               <div class="row">
                 <!-- User Content -->
                 <div class="col-xl-12 col-lg-7 col-md-7 order-0 order-md-1">                                  
@@ -351,47 +351,173 @@
                           class="btn btn-primary btn-sm edit-address mb-4"
                           type="button"
                           data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
-                          Add Publication
+                          data-bs-target="#addref">
+                          Add Refree
                   </button>
-                  <!-- Publication Details -->
+                  <!-- current employement -->
                   <div class="card card-action mb-4">
                     <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Publication Details</h5>
+                      <h5 class="card-action-title mb-0">Refree Details</h5>
                       <div class="card-action-element">
-                        <button class="btn btn-primary btn-sm edit-publications" type="button" data-bs-toggle="modal" data-bs-target="#editPublicationsModal">
-                          Edit Publications
-                        </button>
                       </div>
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-xl-12 col-12">
+                        <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Title:</dt>
-                            <dd class="col-sm-10">Your Publication Title</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Name:</dt>
+                            <dd class="col-sm-8">Refree 1 name</dd>
 
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Authors:</dt>
-                            <dd class="col-sm-10">Author 1, Author 2, Author 3</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Organization:</dt>
+                            <dd class="col-sm-8">test Organization</dd>
 
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Journal/Conference:</dt>
-                            <dd class="col-sm-10">Journal/Conference Name</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
+                            <dd class="col-sm-8">
+                              100 Water Plant <br />Avenue, Building 1303<br />
+                              Wake Island
+                            </dd>
+                          </dl>
+                        </div>
+                        <div class="col-xl-5 col-12">
+                          <dl class="row mb-0">
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
+                            <dd class="col-sm-8">analyst</dd>
 
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Date:</dt>
-                            <dd class="col-sm-10">Publication Date</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
+                            <dd class="col-sm-8">071 111 1111</dd>
 
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Abstract:</dt>
-                            <dd class="col-sm-10">Your Publication Abstract</dd>
                           </dl>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- /Publication Details -->
+                  <!--/ current employement -->
+                  <!-- current employement -->
+                  <div class="card card-action mb-4">
+                    <div class="card-header align-items-center">
+                      <h5 class="card-action-title mb-0">Refree Details</h5>
+                      <div class="card-action-element">
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-xl-7 col-12">
+                          <dl class="row mb-0">
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Name:</dt>
+                            <dd class="col-sm-8">Refree 1 name</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Organization:</dt>
+                            <dd class="col-sm-8">test Organization</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
+                            <dd class="col-sm-8">
+                              100 Water Plant <br />Avenue, Building 1303<br />
+                              Wake Island
+                            </dd>
+                          </dl>
+                        </div>
+                        <div class="col-xl-5 col-12">
+                          <dl class="row mb-0">
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
+                            <dd class="col-sm-8">analyst</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
+                            <dd class="col-sm-8">071 111 1111</dd>
+
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/ current employement -->
 
                 </div>
                 <!--/ User Content -->
-              </div>              
+              </div> 
+              
+              <!-- Add New ref Modal -->
+              <div class="modal fade" id="addref" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="addrefForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Add New Referee</h3>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="modaladdrefName">Referee Name</label>
+                          <input
+                            type="text"
+                            id="modaladdrefName"
+                            name="modaladdrefName"
+                            class="form-control"
+                            placeholder="John lemon" />
+                        </div>                 
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefOrg">Referee Organization</label>
+                          <input
+                            type="text"
+                            id="modaladdrefOrg"
+                            name="modaladdrefOrg"
+                            class="form-control"
+                            placeholder="University of Colombo" />
+                        </div> 
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefDes">Referee Designation</label>
+                          <input
+                            type="text"
+                            id="modaladdrefDes"
+                            name="modaladdrefDes"
+                            class="form-control"
+                            placeholder="Analyst" />
+                        </div> 
+                        <div class="col-12">
+                          <label class="form-label" for="modaladdrefAddress">Refree Address</label>
+                          <input
+                            type="text"
+                            id="modaladdrefAddress"
+                            name="modaladdrefAddress"
+                            class="form-control"
+                            placeholder="12, Business Park" />
+                        </div>
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefContact">Refree Contact</label>
+                          <input
+                            type="text"
+                            id="modaladdrefContact"
+                            name="modaladdrefContact"
+                            class="form-control"
+                            placeholder="" />
+                        </div>
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefMail">Refree E-mail</label>
+                          <input
+                            type="text"
+                            id="modaladdrefMail"
+                            name="modaladdrefMail"
+                            class="form-control"
+                            placeholder="ref@test.com" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Add Refree</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Add New Address Modal -->
 
               
             </div>
@@ -433,36 +559,34 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../../assets/vendor/js/bootstrap.js"></script>
-    <script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
-    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
-    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
-    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
-    <script src="../../assets/vendor/js/menu.js"></script>
-
-    <!-- endbuild -->
-
+    <script src="{% static 'cmb_Reg/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/node-waves/node-waves.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/hammer/hammer.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/i18n/i18n.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/typeahead-js/typeahead.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/js/menu.js' %}"></script>
+    
     <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
-    <script src="../../assets/vendor/libs/cleavejs/cleave.js"></script>
-    <script src="../../assets/vendor/libs/cleavejs/cleave-phone.js"></script>
-    <script src="../../assets/vendor/libs/select2/select2.js"></script>
-    <script src="../../assets/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
-    <script src="../../assets/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
-    <script src="../../assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
-
+    <script src="{% static 'cmb_Reg/vendor/libs/sweetalert2/sweetalert2.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/cleavejs/cleave.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/cleavejs/cleave-phone.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/select2/select2.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/bundle/popular.min.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js' %}"></script>
+    
     <!-- Main JS -->
-    <script src="../../assets/js/main.js"></script>
-
+    <script src="{% static 'cmb_Reg/js/main.js' %}"></script>
+    
     <!-- Page JS -->
-    <script src="../../assets/js/modal-edit-user.js"></script>
-    <script src="../../assets/js/modal-edit-cc.js"></script>
-    <script src="../../assets/js/modal-add-new-cc.js"></script>
-    <script src="../../assets/js/modal-add-new-address.js"></script>
-    <script src="../../assets/js/app-user-view.js"></script>
-    <script src="../../assets/js/app-user-view-billing.js"></script>
+    <script src="{% static 'cmb_Reg/js/modal-edit-user.js' %}"></script>
+    <script src="{% static 'cmb_Reg/js/modal-edit-cc.js' %}"></script>
+    <script src="{% static 'cmb_Reg/js/modal-add-new-cc.js' %}"></script>
+    <script src="{% static 'cmb_Reg/js/modal-add-new-address.js' %}"></script>
+    <script src="{% static 'cmb_Reg/js/app-user-view.js' %}"></script>
+    <script src="{% static 'cmb_Reg/js/app-user-view-billing.js' %}"></script>
   </body>
 </html>

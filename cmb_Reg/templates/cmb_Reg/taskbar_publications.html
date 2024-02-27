@@ -88,31 +88,31 @@
               <span class="menu-header-text" data-i18n="Taskbar">Taskbar</span>
             </li>
             <li class="menu-item">
-              <a href="app-email.html" class="menu-link">
+              <a href="{% url 'profile' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user-check"></i>
                 <div data-i18n="Profile">Profile</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-chat.html" class="menu-link">
+              <a href="{% url 'education' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-certificate"></i>
                 <div data-i18n="Qualifications">Qualifications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-calendar.html" class="menu-link">
+              <a href="{% url 'employement' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-briefcase"></i>
                 <div data-i18n="Employement">Employement</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'publications' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-book"></i>
                 <div data-i18n="publications">publications</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-kanban.html" class="menu-link">
+              <a href="{% url 'referees' %}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Reference">Reference</div>
               </a>
@@ -343,120 +343,153 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Employement</h4>
+              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Publications</h4>
               <div class="row">
                 <!-- User Content -->
                 <div class="col-xl-12 col-lg-7 col-md-7 order-0 order-md-1">                                  
-
-                  <!-- current employement -->
-                  <div class="card card-action mb-4">
-                    <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Current Employement</h5>
-                      <div class="card-action-element">
-                        <button
-                          class="btn btn-primary btn-sm edit-address"
-                          type="button"
-                          data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
-                          Edit Details
-                        </button>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-xl-7 col-12">
-                          <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Company Name:</dt>
-                            <dd class="col-sm-8">University of colombo</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Duties:</dt>
-                            <dd class="col-sm-8">Quality control</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Email:</dt>
-                            <dd class="col-sm-8">user@test.com</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
-                            <dd class="col-sm-8">
-                              100 Water Plant <br />Avenue, Building 1303<br />
-                              Wake Island
-                            </dd>
-                          </dl>
-                        </div>
-                        <div class="col-xl-5 col-12">
-                          <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
-                            <dd class="col-sm-8">system analyst</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
-                            <dd class="col-sm-8">071 111 1111</dd>
-
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Fax:</dt>
-                            <dd class="col-sm-8">011 111 1111</dd>
-
-                          </dl>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/ current employement -->
                   <button
                           class="btn btn-primary btn-sm edit-address mb-4"
                           type="button"
                           data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
-                          Add Previous Employement
+                          data-bs-target="#addpublication">
+                          Add Publication
                   </button>
-                  <!-- previous employement -->
+                  <!-- Publication Details -->
                   <div class="card card-action mb-4">
                     <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Previous Employement</h5>
+                      <h5 class="card-action-title mb-0">Publication Details</h5>
                       <div class="card-action-element">
-                        <button
-                          class="btn btn-primary btn-sm edit-address"
-                          type="button"
-                          data-bs-toggle="modal"
-                          data-bs-target="#addNewAddress">
-                          Edit Details
+                        <button class="btn btn-primary btn-sm edit-publications" type="button" data-bs-toggle="modal" data-bs-target="#editpublication">
+                          Edit Publications
                         </button>
                       </div>
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-xl-7 col-12">
+                        <div class="col-xl-12 col-12">
                           <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Company Name:</dt>
-                            <dd class="col-sm-8">University of colombo</dd>
+                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Title:</dt>
+                            <dd class="col-sm-10">Your Publication Title</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Duties:</dt>
-                            <dd class="col-sm-8">Quality control</dd>
+                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Authors:</dt>
+                            <dd class="col-sm-10">Author 1, Author 2, Author 3</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
-                            <dd class="col-sm-8">
-                              100 Water Plant <br />Avenue, Building 1303<br />
-                              Wake Island
-                            </dd>
-                          </dl>
-                        </div>
-                        <div class="col-xl-5 col-12">
-                          <dl class="row mb-0">
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
-                            <dd class="col-sm-8">system analyst</dd>
+                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Journal/Conference:</dt>
+                            <dd class="col-sm-10">Journal/Conference Name</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Start Date:</dt>
-                            <dd class="col-sm-8">2019-10-09</dd>
+                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Date:</dt>
+                            <dd class="col-sm-10">Publication Date</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">End Date:</dt>
-                            <dd class="col-sm-8">2022-05-05</dd>
-
+                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Abstract:</dt>
+                            <dd class="col-sm-10">Your Publication Abstract</dd>
                           </dl>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!--/ previous employement -->
+                  <!-- /Publication Details -->
+
                 </div>
                 <!--/ User Content -->
-              </div>              
+              </div>  
+              <!-- add publication Modal -->
+              <div class="modal fade" id="addpublication" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="addpublicationForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Add Publication Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="title">Title</label>
+                          <input type="text" id="title" class="form-control" placeholder="University of Colombo" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="author">Author/s</label>
+                          <input type="text" id="author" class="form-control" placeholder="System Analyst" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="Journal">Journal/Conference</label>
+                          <input type="text" id="Journal" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="publication-date">Publication Date</label>
+                          <input type="date" id="publication-date" class="form-control" />
+                        </div>
+                        <div class="col-sm-12">
+                          <label class="form-label" for="abstract">Abstract</label>
+                          <input type="text" id="abstract" class="form-control" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ add publication Modal -->
+              <!-- edit publication Modal -->
+              <div class="modal fade" id="editpublication" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="editpublicationForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Edit Publication Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="title">Title</label>
+                          <input type="text" id="title" class="form-control" placeholder="University of Colombo" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="author">Author/s</label>
+                          <input type="text" id="author" class="form-control" placeholder="System Analyst" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="Journal">Journal/Conference</label>
+                          <input type="text" id="Journal" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="publication-date">Publication Date</label>
+                          <input type="date" id="publication-date" class="form-control" />
+                        </div>
+                        <div class="col-sm-12">
+                          <label class="form-label" for="abstract">Abstract</label>
+                          <input type="text" id="abstract" class="form-control" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ edit publication Modal -->
 
               
             </div>
@@ -507,7 +540,9 @@
     <script src="{% static 'cmb_Reg/vendor/libs/i18n/i18n.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/typeahead-js/typeahead.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/js/menu.js' %}"></script>
-    
+
+    <!-- endbuild -->
+
     <!-- Vendors JS -->
     <script src="{% static 'cmb_Reg/vendor/libs/sweetalert2/sweetalert2.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/cleavejs/cleave.js' %}"></script>
@@ -516,10 +551,10 @@
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/bundle/popular.min.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js' %}"></script>
-    
+
     <!-- Main JS -->
     <script src="{% static 'cmb_Reg/js/main.js' %}"></script>
-    
+
     <!-- Page JS -->
     <script src="{% static 'cmb_Reg/js/modal-edit-user.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/modal-edit-cc.js' %}"></script>
