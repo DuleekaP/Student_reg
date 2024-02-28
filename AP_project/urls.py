@@ -19,6 +19,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from cmb_Reg import views  #this might cause troubles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,10 @@ urlpatterns = [
     path('auth-login-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-login-basic - cmb.html'), name='auth-login-basic - cmb'),
     path('auth-register-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-register-basic - cmb.html'), name='auth-register-basic - cmb'),
     path('form-wizard-icons - cmb/', TemplateView.as_view(template_name='cmb_Reg/form-wizard-icons - cmb.html'), name='form-wizard-icons - cmb'),
+    path('', views.index, name='home'),
+    path('login/', views.user_login, name='login'),
+    path('signup/', views.user_signup, name='signup'),
+    path('logout/', views.user_logout, name='logout'),
 ]
 
 # Append static URL pattern for development

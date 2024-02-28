@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cmb_Reg',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = '/cmb_Reg/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'cmb_Reg/static/',
+    BASE_DIR / 'cmb_Reg/static/cmb_Reg/',
 ]
 
 # Default primary key field type
