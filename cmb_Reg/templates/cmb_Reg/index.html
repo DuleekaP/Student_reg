@@ -1,9 +1,228 @@
-{% if request.user.is_authenticated %}
-  <p>{{ request.user.username }}</p>
-  <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-  <a href="{% url 'login' %}">Login</a>
-  <a href="{% url 'signup' %}">Signup</a>
-{% endif %}
+{% load static %}
+<!DOCTYPE html>
 
-<h1>Welcome!</h1>
+<html
+  lang="en"
+  class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../../cmb_Reg/static/"
+  data-template="vertical-menu-template">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Academy - My Courses - App | Vuexy - Bootstrap Admin Template</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'cmb_Reg/img/favicon/favicon.ico' %}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+      rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/fonts/fontawesome.css'%}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/fonts/tabler-icons.css'%}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/fonts/flag-icons.css'%}"/>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/css/rtl/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/css/rtl/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/css/demo.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/node-waves/node-waves.css' %}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/typeahead-js/typeahead.css' %}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/sweetalert2/sweetalert2.css' %}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/styles/index.min.css' %}" />    
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'cmb_Reg/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="{% static 'cmb_Reg/vendor/js/template-customizer.js' %}"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'cmb_Reg/js/config.js' %}"></script>
+
+    <style>
+      table {
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+  </style>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div>
+      <div class="layout-container justify-content-center align-items-center">
+
+        <!-- Layout container -->
+        <div>       
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="card">
+                <div class="card-body row">
+                  <div>
+                    <div class="card academy-content shadow-none border">
+                      <div class="card-body">
+                        <h5 class="mb-2">Welcome!</h5>
+                        <div class="app-brand justify-content-center mb-4 mt-2">
+                          <a href="https://law.cmb.ac.lk/" class="app-brand-link gap-2">
+                              <span class="app-brand-logo demo">
+                                  <!-- Your University Logo SVG or Image -->
+                                  <img src=https://law.cmb.ac.lk/wp-content/uploads/2021/11/logo-e1636104531847.png alt="University of Colombo" height="25px" />
+                              </span>
+                          </a>
+                        </div>
+                        <h1 class="app-brand justify-content-center mb-4">APPLICATION PORTAL</h1>
+                        <h3 class="app-brand justify-content-center mb-4">FACULTY OF LAW - UNIVERSITY OF COLOMBO</h3>                        
+                        <hr class="my-4" />
+                        <p class="mb-2 pt-1">
+                          Please use this platform to apply for the External Degree Programs & Certificate Course Programs conducted by 
+                          Faculty of Law - University of Colombo.
+                        </p>
+                        <hr class="my-4" />
+                        <h3>Procedure of Application</h3>
+                        
+                        <div class="d-flex flex-wrap">
+                          <div class="me-5">
+                            <p class="text-nowrap"><i class="ti ti-checks ti-sm me-2 mt-n2"></i> Check Newspaper & Gazzette for course announcements.</p>
+                            <p class="text-nowrap"><i class="ti ti-user ti-sm me-2 mt-n2"></i> Use this platform to create an account</p>
+                            <p class="text-nowrap"><i class="ti ti-flag ti-sm me-2 mt-n2"></i> Update personal / Employement / Contact / Other details</p>
+                            <p class="text-nowrap"><i class="ti ti-file ti-sm me-2 mt-n2"></i> Provide necessary documents | Payment Slip | National Identity Card | Educational Certificates |</p>
+                            <p class="text-nowrap"><i class="ti ti-settings ti-sm me-2 mt-n2"></i> Submit Application</p>
+                          </div>
+                        </div>
+                        {% if request.user.is_authenticated %}
+                        <div class="d-flex justify-content-end">
+                          <a href="{% url 'profile' %}" class="btn btn-primary">Start Applying</a>                           
+                        </div>
+                        {% else %}
+                        <div class="d-flex justify-content-end">
+                          <a href="{% url 'login' %}" class="btn btn-primary">Login to Apply</a>
+                        </div>
+                        {% endif %}
+                        <hr class="mb-4 mt-2" />                        
+                        <h3>Bank Account Details</h3>
+                        <div>
+                          <table>                          
+                            <tr>
+                                <td><strong>Application Fee</strong></td>
+                                <td>5,000.00 LKR (25USD for Foreign Students)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bank</strong></td>
+                                <td>People’s Bank</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Branch</strong></td>
+                                <td>Thimbirigasyaya</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Account Name</strong></td>
+                                <td>University of Colombo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Account No</strong></td>
+                                <td>310015200006</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Online Payment</strong></td>
+                                <td><a href="https://pay.cmb.ac.lk">pay.cmb.ac.lk</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fee Type</strong></td>
+                                <td>Application Fee - Post Graduate - FM/FS/FL/FGS/FMF</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Payment Reference</strong></td>
+                                <td>310015200006</td>
+                            </tr>
+                        </table>
+                        </div>
+                        <hr class="my-4" />
+                        <h5>More Info :</h5>
+                        <div class="d-flex justify-content-start align-items-center user-name">
+                          <h6>+9475 706 8168 / +9411 250 2750</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">                  
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="{% static 'cmb_Reg/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/node-waves/node-waves.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/hammer/hammer.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/i18n/i18n.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/libs/typeahead-js/typeahead.js' %}"></script>
+    <script src="{% static 'cmb_Reg/vendor/js/menu.js' %}"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{% static 'cmb_Reg/vendor/libs/plyr/plyr.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'cmb_Reg/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'cmb_Reg/js/app-academy-course-details.js' %}"></script>
+  </body>
+</html>

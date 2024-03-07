@@ -343,7 +343,22 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Educational Qualifications</h4>
+              <table class="table">
+                <tr>
+                  <th><h4>Educational Qualifications</h4></th>
+                  <td>
+                    <div class="d-flex justify-content-end">
+                      <button
+                        class="btn btn-primary edit-address me-2"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#edituser">
+                        Edit | Add Details
+                    </button>                          
+                  </div>
+                </td>
+              </tr>
+              </table>
               <div class="row">
 
                 <!-- User Content -->
@@ -368,13 +383,13 @@
                         <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Attempted Year:</dt>
-                            <dd class="col-sm-8">2022</dd>
+                            <dd class="col-sm-8">{{record.al_year}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Stream:</dt>
-                            <dd class="col-sm-8">Physical Science</dd>
+                            <dd class="col-sm-8">{{record.stream}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Result Sheet:</dt>
-                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">View PDF</a></dd>
+                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">{{record.resultSheet}}</a></dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
@@ -382,17 +397,17 @@
                             <dt class="col-sm-4 mb-2 fw-bold text-nowrap">Subject</dt>
                             <dd class="col-sm-8 fw-bold text-nowrap">Result</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 1</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">{{record.subject1}}</dt>
+                            <dd class="col-sm-8">{{record.result1}}</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 2</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">{{record.subject2}}</dt>
+                            <dd class="col-sm-8">{{record.result2}}</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 3</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">{{record.subject3}}</dt>
+                            <dd class="col-sm-8">{{record.result3}}</dd>
 
-                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Subject 4</dt>
-                            <dd class="col-sm-8">A</dd>
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">{{record.subject4}}</dt>
+                            <dd class="col-sm-8">{{record.result4}}</dd>
 
                           </dl>
                         </div>                        
@@ -410,7 +425,7 @@
                   <!-- Billing Address -->
                   <div class="card card-action mb-4">
                     <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Other Educational Qualifications</h5>
+                      <h5 class="card-action-title mb-0">First Degree Qualifications</h5>
                       <div class="card-action-element">
                         <button
                           class="btn btn-primary btn-sm edit-address"
@@ -427,29 +442,29 @@
                           <dl class="row mb-0">
                             
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Degree Name:</dt>
-                            <dd class="col-sm-8">BSc.Physical Science</dd>
+                            <dd class="col-sm-8">{{record.degreeName}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Started Year:</dt>
-                            <dd class="col-sm-8">2018</dd>
+                            <dd class="col-sm-8">{{record.degreestartYear}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Graduated Year:</dt>
-                            <dd class="col-sm-8">2022</dd>
+                            <dd class="col-sm-8">{{record.graduateYear}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Transcript:</dt>
-                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">View PDF</a></dd>
+                            <dd class="col-sm-8"><a href="yourscannedfile.pdf" target="_blank">{{record.transcript}}</a></dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
                           <dl class="row mb-0">
                             
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Institute:</dt>
-                            <dd class="col-sm-8">University of Colombo</dd>
+                            <dd class="col-sm-8">{{record.institute}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Class:</dt>
-                            <dd class="col-sm-8">General</dd>
+                            <dd class="col-sm-8">{{record.degreeClass}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">GPA:</dt>
-                            <dd class="col-sm-8">2.9</dd>
+                            <dd class="col-sm-8">{{record.gpa}}</dd>
 
                           </dl>
                         </div>                        
@@ -468,7 +483,7 @@
                     <div class="modal-body">
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       
-                      <form id="editEduQualForm" class="row g-3" onsubmit="return false">
+                      <form id="editEduQualForm" class="row g-3" onsubmit="reloadPage()">
                         <div class="col-12">
                           <div class="row" >                                                     
                             <h3>Edit Qualification Details</h3>
@@ -583,16 +598,18 @@
                     <div class="modal-body">
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       
-                      <form id="editALForm" class="row g-3" onsubmit="return false">
+                      <form id="editALForm" class="row g-3" method="post">
+                        {% csrf_token %}
                         <div class="col-12">
                           <div class="row" >                                                     
-                            <h3>Edit ADAVNCED LEVEL RESULTS</h3>
+                            <h3>Edit Educational Qualifications</h3>
                           </div>
-                        </div>
+                        </div>                   
                         <div class="row g-3">
+                          <h5> Advanced Level Results</h5>
                           <div class="col-sm-6">
                             <label class="form-label" for="al-stream">Stream</label>
-                            <select class="select2" id="al-stream">
+                            <select class="select2" name="stream" id="al-stream">
                               <option label=" "></option>
                               <option>Physical Science</option>
                               <option>Biological Science</option>
@@ -604,15 +621,15 @@
                           <div class="col-sm-6">
                             <label class="form-label" for="al-year">Attempted Year</label>
                             <input
-                              type="text" id="al-year" class="form-control" placeholder="2018" />
+                              type="text" id="al-year" name="al_year" class="form-control" placeholder="2018" />
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="al-sub-1">Subject 1</label>
-                            <input type="text" id="al-sub-1" class="form-control" placeholder="Subject 1" />
+                            <input type="text" id="al-sub-1"name="subject1" class="form-control" placeholder="Subject 1" />
                           </div>
                           <div class="col-sm-2">
                             <label class="form-label" for="al-sub-1-result">Result</label>
-                            <select class="select2" id="al-sub-1-result">
+                            <select class="select2" name="result1" id="al-sub-1-result">
                               <option label=" "></option>
                               <option>A</option>
                               <option>B</option>
@@ -623,11 +640,11 @@
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="al-sub-2">Subject 2</label>
-                            <input type="text" id="al-sub-2" class="form-control" placeholder="Subject 2" />
+                            <input type="text" id="al-sub-2" name="subject2" class="form-control" placeholder="Subject 2" />
                           </div>
                           <div class="col-sm-2">
                             <label class="form-label" for="al-sub-2-result">Result</label>
-                            <select class="select2" id="al-sub-2-result">
+                            <select class="select2" name="result2" id="al-sub-2-result">
                               <option label=" "></option>
                               <option>A</option>
                               <option>B</option>
@@ -638,11 +655,11 @@
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="al-sub-3">Subject 3</label>
-                            <input type="text" id="al-sub-3" class="form-control" placeholder="Subject 3" />
+                            <input type="text" id="al-sub-3" name="subject3" class="form-control" placeholder="Subject 3" />
                           </div>
                           <div class="col-sm-2">
                             <label class="form-label" for="al-sub-3-result">Result</label>
-                            <select class="select2" id="al-sub-3-result">
+                            <select class="select2" name="result3" id="al-sub-3-result">
                               <option label=" "></option>
                               <option>A</option>
                               <option>B</option>
@@ -653,11 +670,11 @@
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="al-sub-4">Subject 4</label>
-                            <input type="text" id="al-sub-4" class="form-control" placeholder="Subject 4" />
+                            <input type="text" id="al-sub-4" name="subject4" class="form-control" placeholder="Subject 4" />
                           </div>
                           <div class="col-sm-2">
                             <label class="form-label" for="al-sub-4-result">Result</label>
-                            <select class="select2" id="al-sub-4-result">
+                            <select class="select2" name="result4" id="al-sub-4-result">
                               <option label=" "></option>
                               <option>A</option>
                               <option>B</option>
@@ -666,10 +683,49 @@
                               <option>W</option>
                             </select>
                           </div>
-                          <div class="col-sm-4">
+                          <div class="col-sm-8">
                             <label class="form-label" for="scanned-al-result">Upload Scanned AL Result Sheet</label>
-                            <input type="file" id="scanned-al-result" class="form-control" />
+                            <input type="file" id="scanned-al-result" name="resultSheet" class="form-control" />
                           </div>
+                          <div class="row mt-4" >                                                     
+                            <h5>Degree Qualifications</h5>
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="degreeName">Degree</label>
+                            <input
+                              type="text" id="degreeName" name="degreeName" class="form-control" placeholder="BSc. Engineering" />
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="institute">Institute</label>
+                            <input
+                              type="text" id="institute" name="institute" class="form-control" placeholder="University of Kelaniya" />
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="gpa">GPA</label>
+                            <input
+                              type="text" id="gpa" name="gpa" class="form-control" placeholder="2.0" />
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="degreeClass">Class</label>
+                            <input
+                              type="text" id="degreeClass" name="degreeClass" class="form-control" placeholder="Genaral" />
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="degreestartYear">Started Year</label>
+                            <input
+                              type="text" id="degreestartYear" name="degreestartYear" class="form-control" placeholder="2018" />
+                          </div>
+                          <div class="col-sm-6">
+                            <label class="form-label" for="graduateYear">Graduated Year</label>
+                            <input
+                              type="text" id="graduateYear" name="graduateYear" class="form-control" placeholder="2022" />
+                          </div>
+                          <div class="col-sm-8">
+                            <label class="form-label" for="transcript">Upload Scanned Transcript</label>
+                            <input type="file" id="transcript" name="transcript" class="form-control" />
+                          </div>
+                        </div>
+
                         <div class="col-12 text-center">
                           <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
                           <button
@@ -758,6 +814,6 @@
     <script src="{% static 'cmb_Reg/js/modal-add-new-address.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/app-user-view.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/app-user-view-billing.js' %}"></script>
-    
+    <script>function reloadPage() {location.reload();}</script>
   </body>
 </html>

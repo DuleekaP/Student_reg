@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>User View - Pages | Vuexy - Bootstrap Admin Template</title>
+    <title>Reg Law cmb - Apply</title>
 
     <meta name="description" content="" />
 
@@ -56,6 +56,7 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'cmb_Reg/js/config.js' %}"></script>
   </head>
+
 
   <body>
     <!-- Layout wrapper -->
@@ -290,8 +291,8 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-medium d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-medium d-block">{{ request.user.username }}</span>
+                            <small class="text-muted">Student</small>
                           </div>
                         </div>
                       </a>
@@ -324,7 +325,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                      <a class="dropdown-item" href="{% url 'logout' %}" target="_blank">
                         <i class="ti ti-logout me-2 ti-sm"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -343,145 +344,118 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4"><span class="text-muted fw-light">Publications</h4>
-              <div class="row">
-                <!-- User Content -->
-                <div class="col-xl-12 col-lg-7 col-md-7 order-0 order-md-1">                                  
-                  <button
-                          class="btn btn-primary btn-sm edit-address mb-4"
-                          type="button"
-                          data-bs-toggle="modal"
-                          data-bs-target="#addpublication">
-                          Add Publication
-                  </button>
-                  <!-- Publication Details -->
+              <table class="table">
+                <tr>
+                  <th><h4>Select Course & Apply</h4></th>
+                  <td>
+                    <div class="d-flex justify-content-end">
+                      <button
+                        class="btn btn-primary edit-address me-2"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#edituser">
+                        Apply
+                    </button>                          
+                  </div>
+                </td>
+              </tr>
+              </table>                
+                <!-- User Sidebar -->
+                <div class="col-xl-12 order-0 order-md-1">                                  
+
+                  <!-- Billing Address -->
                   <div class="card card-action mb-4">
-                    <div class="card-header align-items-center">
-                      <h5 class="card-action-title mb-0">Publication Details</h5>
-                      <div class="card-action-element">
-                        <button class="btn btn-primary btn-sm edit-publications" type="button" data-bs-toggle="modal" data-bs-target="#editpublication">
-                          Edit Publications
-                        </button>
-                      </div>
-                    </div>
                     <div class="card-body">
                       <div class="row">
                         <div class="col-xl-12 col-12">
-                          <dl class="row mb-0">
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Title:</dt>
-                            <dd class="col-sm-10">{{record.title}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Authors:</dt>
-                            <dd class="col-sm-10">{{record.authors}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Journal/Conference:</dt>
-                            <dd class="col-sm-10">{{record.journal}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">DOI / link :</dt>
-                            <dd class="col-sm-10">{{record.doi}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Abstract:</dt>
-                            <dd class="col-sm-10">{{record.abstract}}</dd>
-                          </dl>
+                          <h5 class="card-action-title mb-2">Instructions</h5>
+                          <div class="card-action-element">
+                            <p class="text-nowrap"><i class="ti ti-checks ti-sm me-2 mt-n2"></i> Check all the details in provided in previous sections</p>
+                            <p class="text-nowrap"><i class="ti ti-checks ti-sm me-2 mt-n2"></i> Use 'Apply' button to select desired course</p>
+                            <p class="text-nowrap"><i class="ti ti-user ti-sm me-2 mt-n2"></i> Select Payment type </p>
+                            <p class="text-nowrap"><i class="ti ti-flag ti-sm me-2 mt-n2"></i> provide payment reference number</p>
+                            <p class="text-nowrap"><i class="ti ti-settings ti-sm me-2 mt-n2"></i> Submit Application</p> 
+                            <p class="text-nowrap"><i class="ti ti-user-check ti-sm me-2 mt-n2"></i> Once Submit successfully, applied course will be visible in following 'Registered Courses'</p> 
+                            <p class="text-nowrap"><i class="ti ti-file ti-sm me-2 mt-n2"></i> You can download the Application in 'Registered Courses'</p> 
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- /Publication Details -->
-                  <!-- Publication 2 Details -->
-                  <div class="card card-action mb-4">
-                    <div class="card-header align-items-center">
-                      
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-xl-12 col-12">
-                          <dl class="row mb-0">
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Publication Title:</dt>
-                            <dd class="col-sm-10">{{record.title2}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Authors:</dt>
-                            <dd class="col-sm-10">{{record.authors2}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Journal/Conference:</dt>
-                            <dd class="col-sm-10">{{record.journal2}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">DOI / link :</dt>
-                            <dd class="col-sm-10">{{record.doi2}}</dd>
-
-                            <dt class="col-sm-2 mb-2 fw-medium text-nowrap">Abstract:</dt>
-                            <dd class="col-sm-10">{{record.abstract2}}</dd>
-                          </dl>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Publication 2 Details -->
-
+                  <!--/ Billing Address -->
+                  
                 </div>
-                <!--/ User Content -->
-              </div>  
-              <!-- edit publication Modal -->
-              <div class="modal fade" id="editpublication" tabindex="-1" aria-hidden="true">
+                <div class="col-xl-12 col-lg-5 col-md-5 order-1 order-md-0">
+                  <!-- User Card -->
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <h5 class="card-action-title mb-0">Registered Courses</h5>                    
+                      
+                      <div class="info-container">
+                        <table class="table">
+                          <tbody>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width: 400px;">Course</th>
+                                  <th scope="col">Applied date</th>
+                                  <th scope="col">Application</th>
+                                </tr>
+                              </thead>
+                              {% for application in applications %}
+                              <tr>
+                                  <td>{{ application.course_name }}</td>
+                                  <td>{{ application.applied_date }}</td>
+                              </tr>
+                              {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /User Card -->
+                  
+                </div>
+                
+                <!--/ User Sidebar --> 
+              
+              
+              <!-- edit basic user Modal -->
+              <div class="modal fade" id="edituser" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
                   <div class="modal-content p-3 p-md-5">
                     <div class="modal-body">
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       
-                      <form id="editpublicationForm" class="row g-3" method="post">
+                      <form method="post" class="row g-3">
                         {% csrf_token %}
                         <div class="col-12">
                           <div class="row" >                                                     
-                            <h3>Add Publication 1 Details</h3>
+                            <h3>Select & Apply</h3>
                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="title">Title</label>
-                          <input type="text" id="title" name="title" class="form-control" placeholder="Your Title" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="author">Author/s</label>
-                          <input type="text" id="author" name="authors" class="form-control" placeholder="Author 1, Author 2, Author 3" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="Journal">Journal/Conference</label>
-                          <input type="text" id="Journal" name="journal" class="form-control" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="doi">DOI / Link</label>
-                          <input type="text" id="doi" name="doi" class="form-control" />
+                        </div>                        
+                        <div class="col-sm-12">
+                          <label class="form-label" for="select_course">Select Course</label>
+                          <select class="select2" id="select_course" name="course_name">
+                            <option label=" "></option>
+                            <option>Advanced Certificate in Criminal Law</option>
+                            <option>LL.M. in Climate change Law</option>                            
+                          </select>
                         </div>
                         <div class="col-sm-12">
-                          <label class="form-label" for="abstract">Abstract</label>
-                          <input type="text" id="abstract" name="abstract" class="form-control" />
-                        </div>
-                        <div class="col-12">
-                          <div class="row" >                                                     
-                            <h3>Add Publication 2 Details</h3>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="title">Title</label>
-                          <input type="text" id="title" name="title2" class="form-control" placeholder="Your Title" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="author">Author/s</label>
-                          <input type="text" id="author" name="authors2" class="form-control" placeholder="Author 1, Author 2, Author 3" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="Journal">Journal/Conference</label>
-                          <input type="text" id="Journal" name="journal2" class="form-control" />
-                        </div>
-                        <div class="col-sm-6">
-                          <label class="form-label" for="doi">DOI / Link</label>
-                          <input type="text" id="doi" name="doi2" class="form-control" />
+                          <label class="form-label" for="select_payment_type">Select Course</label>
+                          <select class="select2" id="select_payment_type" name="payment_type">
+                            <option label=" "></option>
+                            <option>Bank Deposit</option>
+                            <option>Online Transfer</option>                            
+                          </select>
                         </div>
                         <div class="col-sm-12">
-                          <label class="form-label" for="abstract">Abstract</label>
-                          <input type="text" id="abstract" name="abstract2" class="form-control" />
+                          <label class="form-label" for="marital-status">Reference Number</label>
+                          <input type="text" id="reference_number" name="reference_number" class="form-control" placeholder="reference_number" />
                         </div>
+                        
                         <div class="col-12 text-center">
-                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button type="submit" name="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
                           <button
                             type="reset"
                             class="btn btn-label-secondary"
@@ -495,39 +469,48 @@
                   </div>
                 </div>
               </div>
-              <!--/ edit publication Modal -->
-              <!-- add publication Modal -->
-              <div class="modal fade" id="addpublication" tabindex="-1" aria-hidden="true">
+              <!--/ edit basic user Modal -->
+
+              <!-- edit current employement Modal -->
+              <div class="modal fade" id="editcurrentemployement" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
                   <div class="modal-content p-3 p-md-5">
                     <div class="modal-body">
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       
-                      <form id="addpublicationForm" class="row g-3" onsubmit="return false">
+                      <form id="editcurrentemployementForm" class="row g-3" onsubmit="return false">
                         <div class="col-12">
                           <div class="row" >                                                     
-                            <h3>Edit Publication Details</h3>
+                            <h3>Edit Current Employement Details</h3>
                           </div>
                         </div>
                         <div class="col-sm-6">
-                          <label class="form-label" for="title">Title</label>
-                          <input type="text" id="title" class="form-control" placeholder="University of Colombo" />
+                          <label class="form-label" for="current-employement">Current Employment</label>
+                          <input type="text" id="current-employement" class="form-control" placeholder="University of Colombo" />
                         </div>
                         <div class="col-sm-6">
-                          <label class="form-label" for="author">Author/s</label>
-                          <input type="text" id="author" class="form-control" placeholder="System Analyst" />
+                          <label class="form-label" for="designation">Designation</label>
+                          <input type="text" id="designation" class="form-control" placeholder="System Analyst" />
                         </div>
                         <div class="col-sm-6">
-                          <label class="form-label" for="Journal">Journal/Conference</label>
-                          <input type="text" id="Journal" class="form-control" />
+                          <label class="form-label" for="duties">Nature of Duties Performed</label>
+                          <input type="text" id="duties" class="form-control" />
                         </div>
                         <div class="col-sm-6">
-                          <label class="form-label" for="publication-date">Publication Date</label>
-                          <input type="date" id="publication-date" class="form-control" />
+                          <label class="form-label" for="office-phone">Phone</label>
+                          <input type="text" id="office-phone" class="form-control" />
                         </div>
-                        <div class="col-sm-12">
-                          <label class="form-label" for="abstract">Abstract</label>
-                          <input type="text" id="abstract" class="form-control" />
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-fax">Fax</label>
+                          <input type="text" id="office-fax" class="form-control" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-email">Email</label>
+                          <input type="text" id="office-email" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="office-address">Office Address</label>
+                          <input type="text" id="office-address" class="form-control" placeholder="colombo 3" />
                         </div>
                         <div class="col-12 text-center">
                           <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
@@ -544,7 +527,52 @@
                   </div>
                 </div>
               </div>
-              <!--/ edit publication Modal -->
+              <!--/ edit current employement Modal -->
+              <!-- edit emergency contact Modal -->
+              <div class="modal fade" id="editEmgContact" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-add-new-address">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      
+                      <form id="editEmgContactForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Edit Emergence Contact Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="emergency-name">Name</label>
+                          <input type="text" class="form-control" id="emergency-name" placeholder="Don Simon" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="relationship">Relationship</label>
+                          <input type="text" class="form-control" id="Relationship" placeholder="Father" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="emergency-contact-number">Contact Number</label>
+                          <input type="text" class="form-control" id="emergency-contact-number" placeholder="07X XXX XXXX" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label" for="emergency-address">Address</label>
+                          <input type="text" id="emergency-address" class="form-control" placeholder="colombo 3" />
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ edit emergency contact Modal -->
 
               
             </div>
@@ -595,9 +623,7 @@
     <script src="{% static 'cmb_Reg/vendor/libs/i18n/i18n.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/typeahead-js/typeahead.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/js/menu.js' %}"></script>
-
-    <!-- endbuild -->
-
+    
     <!-- Vendors JS -->
     <script src="{% static 'cmb_Reg/vendor/libs/sweetalert2/sweetalert2.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/cleavejs/cleave.js' %}"></script>
@@ -606,10 +632,10 @@
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/bundle/popular.min.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js' %}"></script>
     <script src="{% static 'cmb_Reg/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js' %}"></script>
-
+    
     <!-- Main JS -->
     <script src="{% static 'cmb_Reg/js/main.js' %}"></script>
-
+    
     <!-- Page JS -->
     <script src="{% static 'cmb_Reg/js/modal-edit-user.js' %}"></script>
     <script src="{% static 'cmb_Reg/js/modal-edit-cc.js' %}"></script>

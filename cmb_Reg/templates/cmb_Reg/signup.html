@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Reg Law cmb - Register</title>
+    <title>Application portal - Sign Up | CMB_Law</title>
 
     <meta name="description" content="" />
 
@@ -89,7 +89,7 @@
               </div>
               <div class="app-brand justify-content-center mb-4 mt-2">
                 <a href="index.html" class="app-brand-link gap-2">
-                  <span class="app-brand-text demo text-body fw ms-1">_____________________________________</span>
+                  <span class="app-brand-text demo text-body fw ms-1">___________________________________</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -98,17 +98,23 @@
 
               <form id="formAuthentication" class="mb-3" method="post">
                 {% csrf_token %}
-                <div class="mb-3">
-                  <label for="username" class="form-label" style="width: 120px;">email</label>
-                  {{ form.username }}
+                <div>
+                  <label for="username" class="form-label" style="width: 400px;">E-mail</label>                  
                 </div>
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password" style="width: 120px;">Password</label>
-                  {{ form.password1 }}
+                <div class="mb-3">                  
+                  <input type="text" name="username" style="width: 400px;">
                 </div>
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password" style="width: 120px;">Confirm Password</label>
-                  {{ form.password2 }}
+                <div class="form-password-toggle">
+                  <label class="form-label" for="password1" style="width: 300px;">Password</label>                  
+                </div>
+                <div class="mb-3 form-password-toggle">                  
+                  <input type="password" name="password1" style="width: 400px;">
+                </div>
+                <div class="form-password-toggle">
+                  <label class="form-label" for="password" style="width: 300px;">Confirm Password</label>                  
+                </div>
+                <div class="mb-3 form-password-toggle">                  
+                  <input type="password" name="password2" style="width: 400px;">
                 </div>
 
                 <div class="mb-3">
@@ -120,7 +126,7 @@
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn-primary d-grid w-100">Sign up</button>
+                <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
               </form>
 
               <p class="text-center">

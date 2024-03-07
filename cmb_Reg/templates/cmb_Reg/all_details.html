@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <h2>{{ user.username }}</h2>
+    
+    <!-- Display BioData -->
+    <h3>Bio Data</h3>
+    <p>Full Name: {{ bio_data.fullname }}</p>
+    <p>First Name: {{ bio_data.firstname }}</p>
+    <p>Last Name: {{ bio_data.lastname }}</p>
+    <p>Birthday: {{ bio_data.birthday }}</p>
+    <p>NIC: {{ bio_data.nic }}</p>
+    <p>Gender: {{ bio_data.gender }}</p>
+    <p>Marital Status: {{ bio_data.marital_status }}</p>
+    <p>Contact: {{ bio_data.contact }}</p>
+    <p>Address: {{ bio_data.address }}</p>
+    <p>Email: {{ bio_data.email }}</p>
+    <!-- Add more fields as needed -->
+
+    <!-- Display Qualifications -->
+    <h3>Qualifications</h3>
+    {% for qualification in qualifications %}
+    <p>Degree Name: {{ qualification.degreeName }}</p>
+    <p>Institute: {{ qualification.institute }}</p>
+    <p>GPA: {{ qualification.gpa }}</p>
+    <p>Degree Class: {{ qualification.degreeClass }}</p>
+    <p>Start Year: {{ qualification.degreestartYear }}</p>
+    <p>Graduate Year: {{ qualification.graduateYear }}</p>
+    <!-- Add more fields as needed -->
+    {% endfor %}
+
+    <!-- Display Employments -->
+    <h3>Employments</h3>
+    {% for employment in employments %}
+    <p>Company Name: {{ employment.c_name }}</p>
+    <p>Company Designation: {{ employment.c_designation }}</p>
+    <p>Company Duties: {{ employment.c_duties }}</p>
+    <p>Company Contact: {{ employment.c_contact }}</p>
+    <p>Company Email: {{ employment.c_email }}</p>
+    <p>Company Fax: {{ employment.c_fax }}</p>
+    <p>Company Address: {{ employment.c_address }}</p>
+    <p>Person Name: {{ employment.p_name }}</p>
+    <p>Person Designation: {{ employment.p_designation }}</p>
+    <p>Person Duties: {{ employment.p_duties }}</p>
+    <p>Person Start Date: {{ employment.p_startDate }}</p>
+    <p>Person End Date: {{ employment.p_endDate }}</p>
+    <p>Person Address: {{ employment.p_address }}</p>
+    <!-- Add more fields as needed -->
+    {% endfor %}
+
+    <!-- Display Publications -->
+    <h3>Publications</h3>
+    {% for publication in publications %}
+    <p>Title: {{ publication.title }}</p>
+    <p>Authors: {{ publication.authors }}</p>
+    <p>Journal: {{ publication.journal }}</p>
+    <p>DOI: {{ publication.doi }}</p>
+    <p>Abstract: {{ publication.abstract }}</p>
+    <p>Title2: {{ publication.title2 }}</p>
+    <p>Authors2: {{ publication.authors2 }}</p>
+    <p>Journal2: {{ publication.journal2 }}</p>
+    <p>DOI2: {{ publication.doi2 }}</p>
+    <p>Abstract2: {{ publication.abstract2 }}</p>
+    <!-- Add more fields as needed -->
+    {% endfor %}
+
+    <!-- Display Referees -->
+    <h3>Referees</h3>
+    {% for referee in referees %}
+    <p>Name: {{ referee.r1_name }}</p>
+    <p>Designation: {{ referee.r1_designation }}</p>
+    <p>Organization: {{ referee.r1_organization }}</p>
+    <p>Contact: {{ referee.r1_contact }}</p>
+    <p>Address: {{ referee.r1_address }}</p>
+    <p>Email: {{ referee.r1_email }}</p>
+    <p>Name2: {{ referee.r2_name }}</p>
+    <p>Designation2: {{ referee.r2_designation }}</p>
+    <p>Organization2: {{ referee.r2_organization }}</p>
+    <p>Contact2: {{ referee.r2_contact }}</p>
+    <p>Address2: {{ referee.r2_address }}</p>
+    <p>Email2: {{ referee.r2_email }}</p>
+    <!-- Add more fields as needed -->
+    {% endfor %}
+
+    <a href="{% url 'generate_pdf' %}" class="btn btn-primary">Download PDF</a>
+</body>
+</html>

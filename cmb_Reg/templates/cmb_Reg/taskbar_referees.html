@@ -366,25 +366,27 @@
                         <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Name:</dt>
-                            <dd class="col-sm-8">Refree 1 name</dd>
+                            <dd class="col-sm-8">{{record.r1_name}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Organization:</dt>
-                            <dd class="col-sm-8">test Organization</dd>
+                            <dd class="col-sm-8">{{record.r1_organization}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
                             <dd class="col-sm-8">
-                              100 Water Plant <br />Avenue, Building 1303<br />
-                              Wake Island
+                              {{record.r1_address}}
                             </dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
                           <dl class="row mb-0">
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
-                            <dd class="col-sm-8">analyst</dd>
+                            <dd class="col-sm-8">{{record.r1_designation}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
-                            <dd class="col-sm-8">071 111 1111</dd>
+                            <dd class="col-sm-8">{{record.r1_contact}}</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Email:</dt>
+                            <dd class="col-sm-8">{{record.r1_email}}</dd>
 
                           </dl>
                         </div>
@@ -404,25 +406,27 @@
                         <div class="col-xl-7 col-12">
                           <dl class="row mb-0">
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Name:</dt>
-                            <dd class="col-sm-8">Refree 1 name</dd>
+                            <dd class="col-sm-8">{{record.r2_name}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Organization:</dt>
-                            <dd class="col-sm-8">test Organization</dd>
+                            <dd class="col-sm-8">{{record.r2_organization}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Address:</dt>
                             <dd class="col-sm-8">
-                              100 Water Plant <br />Avenue, Building 1303<br />
-                              Wake Island
+                              {{record.r2_address}}
                             </dd>
                           </dl>
                         </div>
                         <div class="col-xl-5 col-12">
                           <dl class="row mb-0">
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Designation:</dt>
-                            <dd class="col-sm-8">analyst</dd>
+                            <dd class="col-sm-8">{{record.r2_designation}}</dd>
 
                             <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Contact:</dt>
-                            <dd class="col-sm-8">071 111 1111</dd>
+                            <dd class="col-sm-8">{{record.r2_contact}}</dd>
+
+                            <dt class="col-sm-4 mb-2 fw-medium text-nowrap">Email:</dt>
+                            <dd class="col-sm-8">{{record.r2_email}}</dd>
 
                           </dl>
                         </div>
@@ -442,10 +446,11 @@
                     <div class="modal-body">
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       
-                      <form id="addrefForm" class="row g-3" onsubmit="return false">
+                      <form id="addrefForm" class="row g-3" method="post">
+                        {% csrf_token %}
                         <div class="col-12">
                           <div class="row" >                                                     
-                            <h3>Add New Referee</h3>
+                            <h3>Details of First Referee</h3>
                           </div>
                         </div>
                         <div class="col-12">
@@ -453,7 +458,7 @@
                           <input
                             type="text"
                             id="modaladdrefName"
-                            name="modaladdrefName"
+                            name="r1_name"
                             class="form-control"
                             placeholder="John lemon" />
                         </div>                 
@@ -462,7 +467,7 @@
                           <input
                             type="text"
                             id="modaladdrefOrg"
-                            name="modaladdrefOrg"
+                            name="r1_organization"
                             class="form-control"
                             placeholder="University of Colombo" />
                         </div> 
@@ -471,7 +476,7 @@
                           <input
                             type="text"
                             id="modaladdrefDes"
-                            name="modaladdrefDes"
+                            name="r1_designation"
                             class="form-control"
                             placeholder="Analyst" />
                         </div> 
@@ -480,7 +485,7 @@
                           <input
                             type="text"
                             id="modaladdrefAddress"
-                            name="modaladdrefAddress"
+                            name="r1_address"
                             class="form-control"
                             placeholder="12, Business Park" />
                         </div>
@@ -489,7 +494,7 @@
                           <input
                             type="text"
                             id="modaladdrefContact"
-                            name="modaladdrefContact"
+                            name="r1_contact"
                             class="form-control"
                             placeholder="" />
                         </div>
@@ -498,7 +503,66 @@
                           <input
                             type="text"
                             id="modaladdrefMail"
-                            name="modaladdrefMail"
+                            name="r1_email"
+                            class="form-control"
+                            placeholder="ref@test.com" />
+                        </div>
+                        <div class="col-12">
+                          <div class="row" >                                                     
+                            <h3>Details of Second Referee</h3>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="modaladdrefName">Referee Name</label>
+                          <input
+                            type="text"
+                            id="modaladdrefName"
+                            name="r2_name"
+                            class="form-control"
+                            placeholder="John lemon" />
+                        </div>                 
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefOrg">Referee Organization</label>
+                          <input
+                            type="text"
+                            id="modaladdrefOrg"
+                            name="r2_organization"
+                            class="form-control"
+                            placeholder="University of Colombo" />
+                        </div> 
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefDes">Referee Designation</label>
+                          <input
+                            type="text"
+                            id="modaladdrefDes"
+                            name="r2_designation"
+                            class="form-control"
+                            placeholder="Analyst" />
+                        </div> 
+                        <div class="col-12">
+                          <label class="form-label" for="modaladdrefAddress">Refree Address</label>
+                          <input
+                            type="text"
+                            id="modaladdrefAddress"
+                            name="r2_address"
+                            class="form-control"
+                            placeholder="12, Business Park" />
+                        </div>
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefContact">Refree Contact</label>
+                          <input
+                            type="text"
+                            id="modaladdrefContact"
+                            name="r2_contact"
+                            class="form-control"
+                            placeholder="" />
+                        </div>
+                        <div class="col-6">
+                          <label class="form-label" for="modaladdrefMail">Refree E-mail</label>
+                          <input
+                            type="text"
+                            id="modaladdrefMail"
+                            name="r2_email"
                             class="form-control"
                             placeholder="ref@test.com" />
                         </div>
@@ -512,6 +576,7 @@
                             Cancel
                           </button>
                         </div>
+                        
                       </form>
                     </div>
                   </div>

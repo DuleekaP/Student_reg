@@ -23,11 +23,6 @@ from cmb_Reg import views  #this might cause troubles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('education/', TemplateView.as_view(template_name='cmb_Reg/taskbar_education.html'), name='education'),
-    path('profile/', TemplateView.as_view(template_name='cmb_Reg/taskbar_profile.html'), name='profile'),
-    path('employement/', TemplateView.as_view(template_name='cmb_Reg/taskbar_employement.html'), name='employement'),
-    path('publications/', TemplateView.as_view(template_name='cmb_Reg/taskbar_publications.html'), name='publications'),
-    path('referees/', TemplateView.as_view(template_name='cmb_Reg/taskbar_referees.html'), name='referees'),
     path('auth-forgot-password-basic-cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-forgot-password-basic-cmb.html'), name='auth-forgot-password-basic-cmb'),
     path('auth-login-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-login-basic - cmb.html'), name='auth-login-basic - cmb'),
     path('auth-register-basic - cmb/', TemplateView.as_view(template_name='cmb_Reg/auth-register-basic - cmb.html'), name='auth-register-basic - cmb'),
@@ -36,6 +31,14 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('signup/', views.user_signup, name='signup'),
     path('logout/', views.user_logout, name='logout'),
+    path('profile/',views.user_details, name='profile'),
+    path('education/', views.user_qualification, name='education'),
+    path('employement/', views.user_employement, name='employement'),
+    path('publications/', views.user_publication, name='publications'),
+    path('referees/', views.user_refrees, name='referees'),
+    path('apply/', views.user_application, name='apply'),
+    path('allDetils/', views.user_profile, name='allDetails'),
+    path('generate_pdf/', views.generate_pdf, name='generate_pdf'),
 ]
 
 # Append static URL pattern for development
